@@ -11,4 +11,14 @@ export default class Entrada {
         let texto = prompt(mensagem)
         return texto
     }
+    public receberData(mensagem: string): Date {
+        let prompt = promptSync();
+        let data = prompt(`${mensagem}, no padrão dd/MM/yyyy: `)
+        let partes = data.split('/')
+        let ano = new Number(partes[2])
+        let mes = new Number(partes[1])
+        let dia = new Number(partes[0])
+        let dataForma = new Date(ano.valueOf(), mes.valueOf() - 1, dia.valueOf())
+        return dataForma
+    }
 }
