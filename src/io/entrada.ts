@@ -29,7 +29,7 @@ export default class Entrada {
             ano = prompt(`Por favor digite um ano: `)
         }
 
-        let dataForma = new Date(Number(ano).valueOf(), Number(mes).valueOf(), Number(dia).valueOf())
+        let dataForma = new Date(Number(ano).valueOf() - 1, Number(mes).valueOf(), Number(dia).valueOf())
 
         return dataForma
     }

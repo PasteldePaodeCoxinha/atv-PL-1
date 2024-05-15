@@ -5,12 +5,12 @@ import menuProduto from "../menus/menuProduto";
 import menuServico from "../menus/menuServicos";
 import Empresa from "../modelo/empresa";
 
-console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
 let execucao = true
 
 while (execucao) {
     console.clear()
+    console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
     console.log(`Opções:`);
     console.log(`1 - Opções de Cliente`);
     console.log(`2 - Opções de Pets`);

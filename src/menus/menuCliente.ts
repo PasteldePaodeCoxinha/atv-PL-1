@@ -1,11 +1,9 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import CadastroCliente from "../negocio/cadastroCliente";
-import ListagemClientes from "../negocio/listagemClientes";
+import CadastroCliente from "../negocio/cliente/cadastroCliente";
+import ListagemClientes from "../negocio/cliente/listagemClientes";
 
 export default function menuCliente() {
-    console.clear()
-    console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
     let empresa = new Empresa()
     let execucaoCliente = true
     const funcoes = [
@@ -20,18 +18,19 @@ export default function menuCliente() {
             let listagem = new ListagemClientes(empresa.getClientes)
             listagem.listar()
         },
-        function pegarUmCliente(empresa:Empresa){
-            console.log(`NADA`);   
+        function pegarUmCliente(empresa: Empresa) {
+            console.log(`NADA`);
         },
-        function atualizarUmCLiente(empresa:Empresa){
-            console.log(`NADA`);   
+        function atualizarUmCLiente(empresa: Empresa) {
+            console.log(`NADA`);
         },
-        function deletarUmCliente(empresa:Empresa){
-            console.log(`NADA`);   
+        function deletarUmCliente(empresa: Empresa) {
+            console.log(`NADA`);
         }
     ]
 
     while (execucaoCliente) {
+        console.clear()
         console.log(`Opções:`);
         console.log(`1 - Cadastrar um cliente`);
         console.log(`2 - Listar todos os clientes`);
