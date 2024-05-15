@@ -3,7 +3,7 @@ export default class Entrada {
     public receberNumero(mensagem: string): number {
         let prompt = promptSync();
         let valor = prompt(mensagem)
-        let numero  = new Number(valor)
+        let numero = new Number(valor)
         return numero.valueOf()
     }
     public receberTexto(mensagem: string): string {
@@ -13,12 +13,24 @@ export default class Entrada {
     }
     public receberData(mensagem: string): Date {
         let prompt = promptSync();
-        let data = prompt(`${mensagem}, no padrão dd/MM/yyyy: `)
-        let partes = data.split('/')
-        let ano = new Number(partes[2])
-        let mes = new Number(partes[1])
-        let dia = new Number(partes[0])
-        let dataForma = new Date(ano.valueOf(), mes.valueOf() - 1, dia.valueOf())
+
+        let dia = prompt(`Digite o dia de ${mensagem}: `)
+        while (dia === "") {
+            dia = prompt(`Por favor digite um dia: `)
+        }
+
+        let mes = prompt(`Digite o mês de ${mensagem}: `)
+        while (mes === "") {
+            mes = prompt(`Por favor digite um mês: `)
+        }
+
+        let ano = prompt(`Digite o ano de ${mensagem}: `)
+        while (ano === "") {
+            ano = prompt(`Por favor digite um ano: `)
+        }
+
+        let dataForma = new Date(Number(ano).valueOf(), Number(mes).valueOf(), Number(dia).valueOf())
+
         return dataForma
     }
 }

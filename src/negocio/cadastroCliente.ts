@@ -12,11 +12,13 @@ export default class CadastroCliente extends Cadastro {
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
+        console.clear()
         console.log(`\nInício do cadastro do cliente`);
+
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
         let nomeSocial = this.entrada.receberTexto(`Por favor informe o nome social do cliente: `)
         let valor = this.entrada.receberTexto(`Por favor informe o número do cpf: `);
-        let data = this.entrada.receberData(`Por favor informe a data de emissão do cpf, no padrão dd/mm/yyyy: `);
+        let data = this.entrada.receberData(`emissão do cpf`);
         let cpf = new CPF(valor, data);
         let cliente = new Cliente(nome, nomeSocial, cpf);
         this.clientes.push(cliente)

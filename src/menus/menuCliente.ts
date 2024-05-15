@@ -4,6 +4,7 @@ import CadastroCliente from "../negocio/cadastroCliente";
 import ListagemClientes from "../negocio/listagemClientes";
 
 export default function menuCliente() {
+    console.clear()
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
     let empresa = new Empresa()
     let execucaoCliente = true

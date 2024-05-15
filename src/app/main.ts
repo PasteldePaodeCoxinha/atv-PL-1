@@ -10,6 +10,7 @@ let empresa = new Empresa()
 let execucao = true
 
 while (execucao) {
+    console.clear()
     console.log(`Opções:`);
     console.log(`1 - Opções de Cliente`);
     console.log(`2 - Opções de Pets`);
