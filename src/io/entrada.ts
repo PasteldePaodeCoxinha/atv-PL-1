@@ -31,6 +31,31 @@ export default class Entrada {
 
         let dataForma = new Date(Number(ano).valueOf() - 1, Number(mes).valueOf(), Number(dia).valueOf())
 
+        while (true) {
+            try {
+                dataForma.toISOString()
+                break
+            } catch (e) {
+                console.log(`Data inválida, digite de novo!`);
+                let dia = prompt(`Digite o dia de ${mensagem}: `)
+                while (dia === "") {
+                    dia = prompt(`Por favor digite um dia: `)
+                }
+
+                let mes = prompt(`Digite o mês de ${mensagem}: `)
+                while (mes === "") {
+                    mes = prompt(`Por favor digite um mês: `)
+                }
+
+                let ano = prompt(`Digite o ano de ${mensagem}: `)
+                while (ano === "") {
+                    ano = prompt(`Por favor digite um ano: `)
+                }
+
+                dataForma = new Date(Number(ano).valueOf(), Number(mes).valueOf() - 1, Number(dia).valueOf())
+            }
+        }
+
         return dataForma
     }
 }

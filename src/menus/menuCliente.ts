@@ -2,6 +2,7 @@ import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import CadastroCliente from "../negocio/cliente/cadastroCliente";
 import ListagemClientes from "../negocio/cliente/listagemClientes";
+import PegarUmCliente from "../negocio/cliente/pegaUmCliente";
 
 export default function menuCliente() {
     let empresa = new Empresa()
@@ -19,7 +20,8 @@ export default function menuCliente() {
             listagem.listar()
         },
         function pegarUmCliente(empresa: Empresa) {
-            console.log(`NADA`);
+            let pegarUm = new PegarUmCliente(empresa.getClientes)
+            pegarUm.pegarUm()
         },
         function atualizarUmCLiente(empresa: Empresa) {
             console.log(`NADA`);

@@ -23,8 +23,8 @@ export default class ListagemClientes extends Listagem {
         });
         console.log(`\n`);
 
-        while (res !== "S") {
-            res = this.entrada.receberTexto(`Digite "S" para sair da listagem: `)
+        while (res !== "0") {
+            res = this.entrada.receberTexto(`Digite "0" para sair da listagem: `)
         }
     }
 }
