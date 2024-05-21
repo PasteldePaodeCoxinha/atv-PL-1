@@ -35,9 +35,14 @@ export default class Cliente {
     public get getDataCadastro(): Date {
         return this.dataCadastro
     }
+
     public get getTelefones(): Array<Telefone> {
         return this.telefones
     }
+    public set setTelefones(telefones: Array<Telefone>) {
+        this.telefones = telefones
+    }
+    
     public get getProdutosConsumidos(): Array<Produto> {
         return this.produtosConsumidos
     }

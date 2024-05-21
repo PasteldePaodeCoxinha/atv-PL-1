@@ -1,11 +1,11 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
+import AtualizarCliente from "../negocio/cliente/atualizarCliente";
 import CadastroCliente from "../negocio/cliente/cadastroCliente";
 import ListagemClientes from "../negocio/cliente/listagemClientes";
 import PegarUmCliente from "../negocio/cliente/pegaUmCliente";
 
-export default function menuCliente() {
-    let empresa = new Empresa()
+export default function menuCliente(empresa: Empresa) {
     let execucaoCliente = true
     const funcoes = [
         function parar(empresa: Empresa) {
@@ -24,7 +24,8 @@ export default function menuCliente() {
             pegarUm.pegarUm()
         },
         function atualizarUmCLiente(empresa: Empresa) {
-            console.log(`NADA`);
+            let atualizar = new AtualizarCliente(empresa.getClientes)
+            atualizar.atualizar()
         },
         function deletarUmCliente(empresa: Empresa) {
             console.log(`NADA`);

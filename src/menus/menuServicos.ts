@@ -1,9 +1,8 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 
-export default function menuServico() {
+export default function menuServico(empresa: Empresa) {
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
-    let empresa = new Empresa()
     let execucaoServico = true
     const funcoes = [
         function parar(empresa: Empresa) {
@@ -15,13 +14,13 @@ export default function menuServico() {
         function listarTodosServicos(empresa: Empresa) {
             console.log(`NADA`);
         },
-        function pegarUmServico(empresa:Empresa){
+        function pegarUmServico(empresa: Empresa) {
             console.log(`NADA`);
         },
-        function atualizarUmServico(empresa:Empresa){
+        function atualizarUmServico(empresa: Empresa) {
             console.log(`NADA`);
         },
-        function deletarUmServico(empresa:Empresa){
+        function deletarUmServico(empresa: Empresa) {
             console.log(`NADA`);
         }
     ]

@@ -1,9 +1,8 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 
-export default function menuPet() {
+export default function menuPet(empresa: Empresa) {
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
-    let empresa = new Empresa()
     let execucaoPet = true
     const funcoes = [
         function parar(empresa: Empresa) {

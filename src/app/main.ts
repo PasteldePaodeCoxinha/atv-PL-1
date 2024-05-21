@@ -3,10 +3,16 @@ import menuCliente from "../menus/menuCliente";
 import menuPet from "../menus/menuPet";
 import menuProduto from "../menus/menuProduto";
 import menuServico from "../menus/menuServicos";
+import Cliente from "../modelo/cliente";
+import CPF from "../modelo/cpf";
 import Empresa from "../modelo/empresa";
+import RG from "../modelo/rg";
+import Telefone from "../modelo/telefone";
+
+let execucao = true
 
 let empresa = new Empresa()
-let execucao = true
+empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date()), [new RG("1", new Date())], [new Telefone("55", "456")]))
 
 while (execucao) {
     console.clear()
@@ -23,16 +29,16 @@ while (execucao) {
 
     switch (opcao) {
         case 1:
-            menuCliente()
+            menuCliente(empresa)
             break
         case 2:
-            menuPet()
+            menuPet(empresa)
             break
         case 3:
-            menuProduto()
+            menuProduto(empresa)
             break
         case 4:
-            menuServico()
+            menuServico(empresa)
             break
         case 0:
             execucao = false
