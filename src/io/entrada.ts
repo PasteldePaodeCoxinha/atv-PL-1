@@ -1,16 +1,25 @@
 import promptSync from "prompt-sync";
 export default class Entrada {
     public receberNumero(mensagem: string): number {
+        let numero = new Number()
         let prompt = promptSync();
+
         let valor = prompt(mensagem)
-        let numero = new Number(valor)
+        numero = Number(valor)
+        while (Number.isNaN(numero)) {
+            valor = prompt(`Digite um número válido: `)
+            numero = Number(valor)
+        }
+
         return numero.valueOf()
     }
+
     public receberTexto(mensagem: string): string {
         let prompt = promptSync();
         let texto = prompt(mensagem)
         return texto
     }
+
     public receberData(mensagem: string): Date {
         let prompt = promptSync();
 

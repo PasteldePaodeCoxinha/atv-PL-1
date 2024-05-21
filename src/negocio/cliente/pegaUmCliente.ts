@@ -30,7 +30,15 @@ export default class PegarUmCliente extends PegarUm {
                 console.log(`------------------------------------------------------------------------------`);
                 console.log(`Nome: ${cliente.nome}`);
                 console.log(`Nome social: ${cliente.nomeSocial}`);
+                console.log(`Data de cadastro: ${cliente.getDataCadastro.toISOString()}`);
                 console.log(`CPF: ${cliente.getCpf.getValor}          Data de Emissão: ${cliente.getCpf.getDataEmissao.toISOString()}`);
+                cliente.getRgs.forEach(r => {
+                    console.log(`RG: ${r.getValor}          Data de Emissão: ${r.getDataEmissao.toISOString()}`);
+                })
+                console.log(`Telefones:`);
+                cliente.getTelefones.forEach(t => {
+                    console.log(`+${t.getDdd} ${t.getNumero}`);
+                })
                 console.log(`------------------------------------------------------------------------------`);
             }
 
