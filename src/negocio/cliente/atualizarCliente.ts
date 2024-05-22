@@ -37,6 +37,15 @@ export default class AtualizarCliente extends Atualizar {
                 switch (opcao) {
                     case 1:
                         let novoNome = this.entrada.receberTexto(`Digite o novo nome: `)
+                        while (novoNome === "") {
+                            console.log(`Digite um nome!`);
+                            novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
+                        }
+                        while (this.clientes.filter(c => c.nome === novoNome).length > 0) {
+                            console.log(`Já existe um cliente com esse nome!`);
+                            novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
+                        }
+
                         cliente.nome = novoNome
                         break;
                     case 2:

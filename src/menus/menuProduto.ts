@@ -37,6 +37,10 @@ export default function menuProduto(empresa: Empresa) {
         let entrada = new Entrada()
         let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
 
-        funcoes[opcao](empresa)
+        try {
+            funcoes[opcao](empresa)
+        } catch (e) {
+            console.log(`Essa função não existe!`);
+        }
     }
 }

@@ -14,7 +14,7 @@ export default class ListagemClientes extends Listagem {
         let res = ""
         console.clear()
         console.log(`\nLista de um clientes:`);
-        this.clientes.forEach(cliente => {
+        this.clientes.sort((a, b) => a.nome.localeCompare(b.nome)).forEach(cliente => {
             console.log(`------------------------------------------------------------------------------`);
             console.log(`Nome: ${cliente.nome}`);
             console.log(`Nome social: ${cliente.nomeSocial}`);

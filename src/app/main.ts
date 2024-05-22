@@ -12,7 +12,10 @@ import Telefone from "../modelo/telefone";
 let execucao = true
 
 let empresa = new Empresa()
-empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date()), [new RG("1", new Date())], [new Telefone("55", "456")]))
+empresa.getClientes.push(new Cliente("b", "b", new CPF("321", new Date(2006, 6, 6)),
+    [new RG("3", new Date(2003, 3, 3)), new RG("4", new Date(2004, 4, 4))], [new Telefone("66", "789"), new Telefone("66", "987")]))
+empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date(2012, 12, 12)),
+    [new RG("1", new Date(2001, 1, 1)), new RG("2", new Date(2002, 2, 2))], [new Telefone("55", "456"), new Telefone("55", "654")]))
 
 while (execucao) {
     console.clear()
