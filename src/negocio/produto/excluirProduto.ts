@@ -1,5 +1,4 @@
 import Entrada from "../../io/entrada";
-import Cliente from "../../modelo/cliente";
 import Produto from "../../modelo/produto";
 import Exclui from "../excluir";
 
