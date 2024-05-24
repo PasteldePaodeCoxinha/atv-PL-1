@@ -13,7 +13,7 @@ export default class ListagemClientes extends Listagem {
     public listar(): void {
         let res = ""
         console.clear()
-        console.log(`\nLista de um clientes:`);
+        console.log(`\nLista de todos clientes:`);
         this.clientes.sort((a, b) => a.nome.localeCompare(b.nome)).forEach(cliente => {
             console.log(`------------------------------------------------------------------------------`);
             console.log(`Nome: ${cliente.nome}`);

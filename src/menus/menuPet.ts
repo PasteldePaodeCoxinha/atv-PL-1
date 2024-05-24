@@ -26,6 +26,7 @@ export default function menuPet(empresa: Empresa) {
     ]
 
     while (execucaoPet) {
+        console.clear()
         console.log(`Opções:`);
         console.log(`1 - Cadastrar um pet`);
         console.log(`2 - Listar todos os pets`);

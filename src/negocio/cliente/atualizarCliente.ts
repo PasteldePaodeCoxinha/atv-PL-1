@@ -111,7 +111,5 @@ export default class AtualizarCliente extends Atualizar {
             cliente = this.clientes.filter(c => c.nome === nome)[0]
             execucaoAtualizarCli = true
         }
-
-        console.log(`\nCadastro concluído :)\n`);
     }
 }

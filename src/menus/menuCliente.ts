@@ -2,7 +2,7 @@ import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import AtualizarCliente from "../negocio/cliente/atualizarCliente";
 import CadastroCliente from "../negocio/cliente/cadastroCliente";
-import ExcluirClientes from "../negocio/cliente/excluirCliente";
+import ExcluirCliente from "../negocio/cliente/excluirCliente";
 import ListagemClientes from "../negocio/cliente/listagemClientes";
 import PegarUmCliente from "../negocio/cliente/pegaUmCliente";
 
@@ -29,7 +29,7 @@ export default function menuCliente(empresa: Empresa) {
             atualizar.atualizar()
         },
         function deletarUmCliente(empresa: Empresa) {
-            let excluir = new ExcluirClientes(empresa.getClientes)
+            let excluir = new ExcluirCliente(empresa.getClientes)
             empresa.setClientes = excluir.excluir()
         }
     ]

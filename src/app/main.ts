@@ -17,6 +17,8 @@ empresa.getClientes.push(new Cliente("b", "b", new CPF("321", new Date(2006, 6, 
 empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date(2012, 12, 12)),
     [new RG("1", new Date(2001, 1, 1)), new RG("2", new Date(2002, 2, 2))], [new Telefone("55", "456"), new Telefone("55", "654")]))
 
+empresa.getProdutos.push()
+
 while (execucao) {
     console.clear()
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)

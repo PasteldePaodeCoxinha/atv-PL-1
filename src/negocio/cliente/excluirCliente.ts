@@ -2,7 +2,7 @@ import Entrada from "../../io/entrada";
 import Cliente from "../../modelo/cliente";
 import Exclui from "../excluir";
 
-export default class ExcluirClientes extends Exclui {
+export default class ExcluirCliente extends Exclui {
     private clientes: Array<Cliente>
     private entrada: Entrada
     constructor(clientes: Array<Cliente>) {

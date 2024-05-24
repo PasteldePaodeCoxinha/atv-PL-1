@@ -26,6 +26,7 @@ export default function menuServico(empresa: Empresa) {
     ]
 
     while (execucaoServico) {
+        console.clear()
         console.log(`Opções:`);
         console.log(`1 - Cadastrar um servico`);
         console.log(`2 - Listar todos os servicos`);
