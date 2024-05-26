@@ -18,6 +18,7 @@ export default class ListagemClientes extends Listagem {
             console.log(`------------------------------------------------------------------------------`);
             console.log(`Nome: ${cliente.nome}`);
             console.log(`Nome social: ${cliente.nomeSocial}`);
+            console.log(`Quatidades de Pets: ${cliente.getPets.length}`);
             console.log(`CPF: ${cliente.getCpf.getValor}          Data de Emissão: ${cliente.getCpf.getDataEmissao.toISOString()}`);
             console.log(`Quantidade RG: ${cliente.getRgs.length}          Quantidade Telefone: ${cliente.getTelefones.length}`);
             console.log(`------------------------------------------------------------------------------`);
