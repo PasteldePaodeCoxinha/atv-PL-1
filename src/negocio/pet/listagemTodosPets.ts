@@ -21,9 +21,9 @@ export default class ListagemTodosPets extends Listagem {
 
             cliente.getPets.sort((a, b) => a.getNome.localeCompare(b.getNome)).forEach(pet => {
                 console.log(`-----------------------------------`);
-                console.log(`Nome: ${pet.getNome}      Genero: ${pet.getGenero}`);
-                console.log(`Tipo: ${pet.getTipo}      Raça: ${pet.getRaca}`);
-                console.log(`Tamanho: ${pet.getTamanho}`);
+                console.log(`Nome: ${pet.getNome}`);
+                console.log(`Genero: ${pet.getGenero}`);
+                console.log(`Tipo: ${pet.getTipo}`);
                 console.log(`-----------------------------------`);
             }
             )

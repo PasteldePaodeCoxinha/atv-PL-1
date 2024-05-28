@@ -4,6 +4,8 @@ import Empresa from "../modelo/empresa";
 import Telefone from "../modelo/telefone";
 import CadastroPet from "../negocio/pet/cadastroPet";
 import ListagemTodosPets from "../negocio/pet/listagemTodosPets";
+import ListagemTodosPetsdeUmCliente from "../negocio/pet/listagemTodosPetsdeUmCliente";
+import PegarUmPet from "../negocio/pet/pegaUmPet";
 
 export default function menuPet(empresa: Empresa) {
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
@@ -17,10 +19,12 @@ export default function menuPet(empresa: Empresa) {
             cadastro.cadastrar()
         },
         function listarTodosPetsDeUmCliente(cliente: Cliente) {
-            console.log(`NADA`);
+            let listarDeUmCliente = new ListagemTodosPetsdeUmCliente(cliente.getPets);
+            listarDeUmCliente.listar()
         },
         function pegarUmPet(cliente: Cliente) {
-            console.log(`NADA`);
+           let pegaUm = new PegarUmPet(cliente.getPets)
+           pegaUm.pegarUm()
         },
         function atualizarUmPet(cliente: Cliente) {
             console.log(`NADA`);
@@ -33,6 +37,7 @@ export default function menuPet(empresa: Empresa) {
 
     while (true) {
         execucaoPet = true
+        console.clear()
         console.log(`Opções: `);
         console.log(`1 - Escolher um cliente`);
         console.log(`2 - Listar todos Pets`);
