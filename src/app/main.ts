@@ -6,6 +6,7 @@ import menuServico from "../menus/menuServicos";
 import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
 import Empresa from "../modelo/empresa";
+import Pet from "../modelo/pet";
 import Produto from "../modelo/produto";
 import RG from "../modelo/rg";
 import Servico from "../modelo/servico";
@@ -18,6 +19,11 @@ empresa.getClientes.push(new Cliente("b", "b", new CPF("321", new Date(2006, 6, 
     [new RG("3", new Date(2003, 3, 3)), new RG("4", new Date(2004, 4, 4))], [new Telefone("66", "789"), new Telefone("66", "987")]))
 empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date(2012, 12, 12)),
     [new RG("1", new Date(2001, 1, 1)), new RG("2", new Date(2002, 2, 2))], [new Telefone("55", "456"), new Telefone("55", "654")]))
+
+empresa.getClientes[0].getPets.push(new Pet("ga", "Gato", "Laranja", "M", "Médio"))
+empresa.getClientes[0].getPets.push(new Pet("ag", "Gato", "Branco", "M", "Médio"))
+
+empresa.getClientes[1].getPets.push(new Pet("me", "Cachorro", "Caramelo", "M", "Grande"))
 
 empresa.getProdutos.push(new Produto("Shampoo", 69.97))
 empresa.getProdutos.push(new Produto("Pente", 1000.54))
