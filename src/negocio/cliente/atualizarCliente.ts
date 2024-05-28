@@ -1,6 +1,5 @@
 import Entrada from "../../io/entrada"
 import Cliente from "../../modelo/cliente"
-import CPF from "../../modelo/cpf"
 import RG from "../../modelo/rg"
 import Telefone from "../../modelo/telefone"
 import Atualizar from "../atualizar"
@@ -17,6 +16,15 @@ export default class AtualizarCliente extends Atualizar {
         console.clear()
         let execucaoAtualizarCli = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente que deseja alterar ou "0" para cancelar: `)
+
+        while (this.clientes.filter(c => c.nome === nome).length < 0) {
+            if (nome === "0") {
+                break
+            }
+            console.log(`Não existe um cliente com esse nome!`);
+            nome = this.entrada.receberTexto(`Por favor informe o nome do cliente que deseja alterar ou "0" para cancelar: `)
+        }
+
         let cliente = this.clientes.filter(c => c.nome === nome)[0]
 
         while (nome !== "0") {

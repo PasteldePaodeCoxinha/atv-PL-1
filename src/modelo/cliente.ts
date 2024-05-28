@@ -42,14 +42,18 @@ export default class Cliente {
     public set setTelefones(telefones: Array<Telefone>) {
         this.telefones = telefones
     }
-    
+
     public get getProdutosConsumidos(): Array<Produto> {
         return this.produtosConsumidos
     }
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+
     public get getPets(): Array<Pet> {
         return this.pets
+    }
+    public set setPets(pets: Array<Pet>) {
+        this.pets = pets
     }
 }

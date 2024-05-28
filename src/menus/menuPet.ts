@@ -2,7 +2,9 @@ import Entrada from "../io/entrada";
 import Cliente from "../modelo/cliente";
 import Empresa from "../modelo/empresa";
 import Telefone from "../modelo/telefone";
+import AtualizarPet from "../negocio/pet/atualizarPet";
 import CadastroPet from "../negocio/pet/cadastroPet";
+import ExcluirPet from "../negocio/pet/excluirPet";
 import ListagemTodosPets from "../negocio/pet/listagemTodosPets";
 import ListagemTodosPetsdeUmCliente from "../negocio/pet/listagemTodosPetsdeUmCliente";
 import PegarUmPet from "../negocio/pet/pegaUmPet";
@@ -27,10 +29,12 @@ export default function menuPet(empresa: Empresa) {
            pegaUm.pegarUm()
         },
         function atualizarUmPet(cliente: Cliente) {
-            console.log(`NADA`);
+            let atualizar = new AtualizarPet(cliente.getPets)
+            atualizar.atualizar()
         },
         function deletarUmPet(cliente: Cliente) {
-            console.log(`NADA`);
+            let excluir = new ExcluirPet(cliente.getPets)
+            cliente.setPets = excluir.excluir()
         }
     ]
 

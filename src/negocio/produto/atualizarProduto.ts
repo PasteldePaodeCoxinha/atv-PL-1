@@ -14,6 +14,15 @@ export default class AtualizarProduto extends Atualizar {
         console.clear()
         let execucaoAtualizarPro = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
+
+        while (this.produtos.filter(p => p.nome === nome).length < 0) {
+            if (nome === "0") {
+                break
+            }
+            console.log(`Não existe um produto com esse nome!`);
+            nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
+        }
+
         let produto = this.produtos.filter(p => p.nome === nome)[0]
 
         while (nome !== "0") {

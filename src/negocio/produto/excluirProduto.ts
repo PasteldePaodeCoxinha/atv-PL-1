@@ -14,7 +14,7 @@ export default class ExcluirProduto extends Exclui {
         console.clear()
         while (true) {
             let tamanhoOriginal = this.produtos.length
-            let nome = this.entrada.receberTexto(`Digite o nome do produto que deseja excluir, se deseja cancelar digite "0":`)
+            let nome = this.entrada.receberTexto(`Digite o nome do produto que deseja excluir, se deseja cancelar digite "0": `)
             this.produtos = this.produtos.filter(p => p.nome != nome)
 
             if (nome === "0") {

@@ -14,6 +14,15 @@ export default class AtualizarServico extends Atualizar {
         console.clear()
         let execucaoAtualizarSer = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço que deseja alterar ou "0" para cancelar: `)
+
+        while (this.servicos.filter(s => s.nome === nome).length < 0) {
+            if (nome === "0") {
+                break
+            }
+            console.log(`Não existe um serviço com esse nome!`);
+            nome = this.entrada.receberTexto(`Por favor informe o nome do serviço que deseja alterar ou "0" para cancelar: `)
+        }
+
         let servico = this.servicos.filter(p => p.nome === nome)[0]
 
         while (nome !== "0") {
