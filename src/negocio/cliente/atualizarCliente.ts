@@ -17,7 +17,7 @@ export default class AtualizarCliente extends Atualizar {
         let execucaoAtualizarCli = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente que deseja alterar ou "0" para cancelar: `)
 
-        while (this.clientes.filter(c => c.nome === nome).length < 0) {
+        while (this.clientes.filter(c => c.nome === nome).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -116,6 +116,11 @@ export default class AtualizarCliente extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro cliente, ou "0" para cancelar: `)
+            while (this.clientes.filter(c => c.nome === nome).length <= 0) {
+                console.log(`Não existe um cliente com esse nome!`);
+                nome = this.entrada.receberTexto(`Por favor informe o nome do cliente que deseja alterar ou "0" para cancelar: `)
+            }
+
             cliente = this.clientes.filter(c => c.nome === nome)[0]
             execucaoAtualizarCli = true
         }

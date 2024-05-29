@@ -15,7 +15,7 @@ export default class AtualizarProduto extends Atualizar {
         let execucaoAtualizarPro = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
 
-        while (this.produtos.filter(p => p.nome === nome).length < 0) {
+        while (this.produtos.filter(p => p.nome === nome).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -61,6 +61,11 @@ export default class AtualizarProduto extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro produto, ou "0" para cancelar: `)
+            while (this.produtos.filter(p => p.nome === nome).length <= 0) {
+                console.log(`Não existe um produto com esse nome!`);
+                nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
+            }
+
             produto = this.produtos.filter(p => p.nome === nome)[0]
             execucaoAtualizarPro = true
         }

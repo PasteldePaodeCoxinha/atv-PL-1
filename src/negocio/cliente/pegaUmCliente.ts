@@ -43,6 +43,12 @@ export default class PegarUmCliente extends PegarUm {
                 cliente.getTelefones.forEach(t => {
                     console.log(`+${t.getDdd} ${t.getNumero}`);
                 })
+
+                console.log(`Quantidade de produtos consumidos: ${cliente.getProdutosConsumidos.length}`);
+                console.log(`Quantidade de serviços consumidos: ${cliente.getServicosConsumidos.length}`);
+                
+                console.log(`Total gasto: R$${cliente.getValorGasto}`);
+                
                 console.log(`------------------------------------------------------------------------------`);
             }
 

@@ -29,7 +29,8 @@ export default class PegarUmServico extends PegarUm {
             } else {
                 console.log(`------------------------------------------------------------------------------`);
                 console.log(`Nome: ${servico.nome}`);
-                console.log(`Nome social: ${servico.preco}`);
+                console.log(`Preço: ${servico.preco}`);
+                console.log(servico.getRacasCompraram);
 
                 console.log(`------------------------------------------------------------------------------`);
             }

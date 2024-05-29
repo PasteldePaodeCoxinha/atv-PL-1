@@ -14,6 +14,7 @@ export default class Cliente {
     private telefones: Array<Telefone>
     private produtosConsumidos: Array<Produto>
     private servicosConsumidos: Array<Servico>
+    private valorGasto: number
     private pets: Array<Pet>
     constructor(nome: string, nomeSocial: string, cpf: CPF, rgs: Array<RG>, telefones: Array<Telefone>) {
         this.nome = nome
@@ -24,6 +25,7 @@ export default class Cliente {
         this.telefones = telefones
         this.produtosConsumidos = []
         this.servicosConsumidos = []
+        this.valorGasto = 0
         this.pets = []
     }
     public get getCpf(): CPF {
@@ -55,5 +57,12 @@ export default class Cliente {
     }
     public set setPets(pets: Array<Pet>) {
         this.pets = pets
+    }
+
+    public get getValorGasto(): number {
+        return this.valorGasto
+    }
+    public set setValorGasto(ValorGasto: number) {
+        this.valorGasto = ValorGasto
     }
 }

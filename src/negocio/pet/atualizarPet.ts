@@ -15,7 +15,7 @@ export default class AtualizarPet extends Atualizar {
         let execucaoAtualizarPet = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja alterar ou "0" para cancelar: `)
 
-        while (this.pets.filter(p => p.getNome === nome).length < 0) {
+        while (this.pets.filter(p => p.getNome === nome).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -66,6 +66,11 @@ export default class AtualizarPet extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro pet, ou "0" para cancelar: `)
+            while (this.pets.filter(p => p.getNome === nome).length <= 0) {
+                console.log(`Não existe um pet com esse nome!`);
+                nome = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja alterar ou "0" para cancelar: `)
+            }
+
             pet = this.pets.filter(p => p.getNome === nome)[0]
             execucaoAtualizarPet = true
         }

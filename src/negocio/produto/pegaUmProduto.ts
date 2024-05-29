@@ -29,8 +29,9 @@ export default class PegarUmProduto extends PegarUm {
             } else {
                 console.log(`------------------------------------------------------------------------------`);
                 console.log(`Nome: ${produto.nome}`);
-                console.log(`Nome social: ${produto.preco}`);
-
+                console.log(`Preço: ${produto.preco}`);
+                console.log(produto.getRacasCompraram);
+                
                 console.log(`------------------------------------------------------------------------------`);
             }
 

@@ -11,6 +11,7 @@ import Produto from "../modelo/produto";
 import RG from "../modelo/rg";
 import Servico from "../modelo/servico";
 import Telefone from "../modelo/telefone";
+import RegistroCompra from "../negocio/compra/RegistroCompra";
 
 let execucao = true
 
@@ -31,8 +32,6 @@ empresa.getProdutos.push(new Produto("Pente", 1000.54))
 empresa.getServicos.push(new Servico("Tosa", 40.00))
 empresa.getServicos.push(new Servico("Banho", 45.45))
 
-empresa.getProdutos.push()
-
 while (execucao) {
     console.clear()
     console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
@@ -41,6 +40,7 @@ while (execucao) {
     console.log(`2 - Opções de Pets`);
     console.log(`3 - Opções de Produtos`);
     console.log(`4 - Opções de Serviços`);
+    console.log(`5 - Registrar Compra`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -58,6 +58,10 @@ while (execucao) {
             break
         case 4:
             menuServico(empresa)
+            break
+        case 5:
+            let registrarCompra = new RegistroCompra(empresa)
+            registrarCompra.registrarCompra()
             break
         case 0:
             execucao = false
