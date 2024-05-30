@@ -15,7 +15,7 @@ export default class AtualizarServico extends Atualizar {
         let execucaoAtualizarSer = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço que deseja alterar ou "0" para cancelar: `)
 
-        while (this.servicos.filter(s => s.nome === nome).length <= 0) {
+        while (this.servicos.filter(s => s.nome.toLowerCase() === nome.toLowerCase()).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -23,7 +23,7 @@ export default class AtualizarServico extends Atualizar {
             nome = this.entrada.receberTexto(`Por favor informe o nome do serviço que deseja alterar ou "0" para cancelar: `)
         }
 
-        let servico = this.servicos.filter(p => p.nome === nome)[0]
+        let servico = this.servicos.filter(p => p.nome.toLowerCase() === nome.toLowerCase())[0]
 
         while (nome !== "0") {
 
@@ -43,7 +43,7 @@ export default class AtualizarServico extends Atualizar {
                             console.log(`Digite um nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
-                        while (this.servicos.filter(c => c.nome === novoNome).length > 0) {
+                        while (this.servicos.filter(c => c.nome.toLowerCase() === novoNome.toLowerCase()).length > 0) {
                             console.log(`Já existe um serviço com esse nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
@@ -61,7 +61,7 @@ export default class AtualizarServico extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro servico, ou "0" para cancelar: `)
-            while (this.servicos.filter(s => s.nome === nome).length <= 0) {
+            while (this.servicos.filter(s => s.nome.toLowerCase() === nome.toLowerCase()).length <= 0) {
                 console.log(`Não existe um serviço com esse nome!`);
                 nome = this.entrada.receberTexto(`Por favor informe o nome do serviço que deseja alterar ou "0" para cancelar: `)
             }

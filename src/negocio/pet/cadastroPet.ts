@@ -19,6 +19,10 @@ export default class CadastroPet extends Cadastro {
             console.log(`Digite um nome!`);
             nome = this.entrada.receberTexto(`Por favor informe o nome do pet: `)
         }
+        while (this.pets.filter(p => p.getNome.toLowerCase() === nome).length > 0) {
+            console.log(`Você já tem um pet com esse nome`);
+            nome = this.entrada.receberTexto(`Por favor informe o nome do pet: `)
+        }
 
         let tipo = this.entrada.receberTexto(`Por favor informe o tipo do pet: `)
         while (tipo === "") {

@@ -19,7 +19,7 @@ export default class CadastroServico extends Cadastro {
             console.log(`Digite um nome!`);
             nome = this.entrada.receberTexto(`Por favor informe o nome do serviço: `)
         }
-        while (this.servicos.filter(p => p.nome === nome).length > 0) {
+        while (this.servicos.filter(p => p.nome.toLowerCase() === nome.toLowerCase()).length > 0) {
             console.log(`Já existe um serviço com esse nome!`);
             nome = this.entrada.receberTexto(`Por favor informe o nome do serviço: `)
         }

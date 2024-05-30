@@ -15,7 +15,7 @@ export default class AtualizarProduto extends Atualizar {
         let execucaoAtualizarPro = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
 
-        while (this.produtos.filter(p => p.nome === nome).length <= 0) {
+        while (this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase()).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -23,7 +23,7 @@ export default class AtualizarProduto extends Atualizar {
             nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
         }
 
-        let produto = this.produtos.filter(p => p.nome === nome)[0]
+        let produto = this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase())[0]
 
         while (nome !== "0") {
 
@@ -43,7 +43,7 @@ export default class AtualizarProduto extends Atualizar {
                             console.log(`Digite um nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
-                        while (this.produtos.filter(c => c.nome === novoNome).length > 0) {
+                        while (this.produtos.filter(c => c.nome.toLowerCase() === novoNome.toLowerCase()).length > 0) {
                             console.log(`Já existe um produto com esse nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
@@ -61,12 +61,12 @@ export default class AtualizarProduto extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro produto, ou "0" para cancelar: `)
-            while (this.produtos.filter(p => p.nome === nome).length <= 0) {
+            while (this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase()).length <= 0) {
                 console.log(`Não existe um produto com esse nome!`);
                 nome = this.entrada.receberTexto(`Por favor informe o nome do produto que deseja alterar ou "0" para cancelar: `)
             }
 
-            produto = this.produtos.filter(p => p.nome === nome)[0]
+            produto = this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase())[0]
             execucaoAtualizarPro = true
         }
     }

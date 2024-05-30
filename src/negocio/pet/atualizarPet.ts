@@ -15,7 +15,7 @@ export default class AtualizarPet extends Atualizar {
         let execucaoAtualizarPet = true
         let nome = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja alterar ou "0" para cancelar: `)
 
-        while (this.pets.filter(p => p.getNome === nome).length <= 0) {
+        while (this.pets.filter(p => p.getNome.toLowerCase() === nome.toLowerCase()).length <= 0) {
             if (nome === "0") {
                 break
             }
@@ -23,7 +23,7 @@ export default class AtualizarPet extends Atualizar {
             nome = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja alterar ou "0" para cancelar: `)
         }
 
-        let pet = this.pets.filter(p => p.getNome === nome)[0]
+        let pet = this.pets.filter(p => p.getNome.toLowerCase() === nome.toLowerCase())[0]
 
         while (nome !== "0") {
 
@@ -43,7 +43,7 @@ export default class AtualizarPet extends Atualizar {
                             console.log(`Digite um nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
-                        while (this.pets.filter(p => p.getNome === novoNome).length > 0) {
+                        while (this.pets.filter(p => p.getNome.toLowerCase() === novoNome.toLowerCase()).length > 0) {
                             console.log(`Já existe um pet com esse nome!`);
                             novoNome = this.entrada.receberTexto(`Por favor informe o novo nome: `)
                         }
@@ -66,12 +66,12 @@ export default class AtualizarPet extends Atualizar {
             }
 
             nome = this.entrada.receberTexto(`Digite o nome de outro pet, ou "0" para cancelar: `)
-            while (this.pets.filter(p => p.getNome === nome).length <= 0) {
+            while (this.pets.filter(p => p.getNome.toLowerCase() === nome.toLowerCase()).length <= 0) {
                 console.log(`Não existe um pet com esse nome!`);
                 nome = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja alterar ou "0" para cancelar: `)
             }
 
-            pet = this.pets.filter(p => p.getNome === nome)[0]
+            pet = this.pets.filter(p => p.getNome.toLowerCase() === nome.toLowerCase())[0]
             execucaoAtualizarPet = true
         }
     }

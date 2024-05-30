@@ -22,7 +22,7 @@ export default class PegarUmCliente extends PegarUm {
                 nome = this.entrada.receberTexto("Digite o nome do cliente que deseja: ")
             }
 
-            let cliente = this.clientes.filter(c => c.nome === nome)[0]
+            let cliente = this.clientes.filter(c => c.nome.toLowerCase() === nome.toLowerCase())[0]
 
             if (!cliente) {
                 console.log(`Não existe cliente com esse nome!`);

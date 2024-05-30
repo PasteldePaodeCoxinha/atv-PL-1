@@ -23,7 +23,7 @@ export default class PegarUmPet extends PegarUm {
                 nome = this.entrada.receberTexto("Digite o nome do pet que deseja: ")
             }
 
-            let pet = this.pets.filter(p => p.getNome === nome)[0]
+            let pet = this.pets.filter(p => p.getNome.toLowerCase() === nome.toLowerCase())[0]
 
             if (!pet) {
                 console.log(`Não existe pet com esse nome!`);

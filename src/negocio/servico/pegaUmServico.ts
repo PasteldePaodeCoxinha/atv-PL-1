@@ -22,7 +22,7 @@ export default class PegarUmServico extends PegarUm {
                 nome = this.entrada.receberTexto("Digite o nome do serviço que deseja: ")
             }
 
-            let servico = this.servicos.filter(p => p.nome === nome)[0]
+            let servico = this.servicos.filter(p => p.nome.toLowerCase() === nome.toLowerCase())[0]
 
             if (!servico) {
                 console.log(`Não existe serviço com esse nome!`);

@@ -19,7 +19,7 @@ export default class CadastroProduto extends Cadastro {
             console.log(`Digite um nome!`);
             nome = this.entrada.receberTexto(`Por favor informe o nome do produto: `)
         }
-        while (this.produtos.filter(p => p.nome === nome).length > 0) {
+        while (this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase()).length > 0) {
             console.log(`Já existe um produto com esse nome!`);
             nome = this.entrada.receberTexto(`Por favor informe o nome do produto: `)
         }

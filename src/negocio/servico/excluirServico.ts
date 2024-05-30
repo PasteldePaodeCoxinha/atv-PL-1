@@ -15,7 +15,7 @@ export default class ExcluirServico extends Exclui {
         while (true) {
             let tamanhoOriginal = this.servicos.length
             let nome = this.entrada.receberTexto(`Digite o nome do serviço que deseja excluir, se deseja cancelar digite "0": `)
-            this.servicos = this.servicos.filter(p => p.nome != nome)
+            this.servicos = this.servicos.filter(p => p.nome.toLowerCase() != nome.toLowerCase())
 
             if (nome === "0") {
                 break

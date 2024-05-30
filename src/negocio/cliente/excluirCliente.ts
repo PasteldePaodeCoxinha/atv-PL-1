@@ -15,7 +15,7 @@ export default class ExcluirCliente extends Exclui {
         while (true) {
             let tamanhoOriginal = this.clientes.length
             let nome = this.entrada.receberTexto(`Digite o nome do cliente que deseja excluir, se deseja cancelar digite "0": `)
-            this.clientes = this.clientes.filter(c => c.nome != nome)
+            this.clientes = this.clientes.filter(c => c.nome.toLowerCase() != nome.toLowerCase())
 
             if (nome === "0") {
                 break

@@ -16,7 +16,7 @@ export default class ExcluirPet extends Exclui {
         while (true) {
             let tamanhoOriginal = this.pets.length
             let nome = this.entrada.receberTexto(`Digite o nome do pet que deseja excluir, se deseja cancelar digite "0": `)
-            this.pets = this.pets.filter(p => p.getNome != nome)
+            this.pets = this.pets.filter(p => p.getNome.toLowerCase() != nome.toLowerCase())
 
             if (nome === "0") {
                 break

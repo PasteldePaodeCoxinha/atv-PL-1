@@ -22,7 +22,7 @@ export default class PegarUmProduto extends PegarUm {
                 nome = this.entrada.receberTexto("Digite o nome do produto que deseja: ")
             }
 
-            let produto = this.produtos.filter(p => p.nome === nome)[0]
+            let produto = this.produtos.filter(p => p.nome.toLowerCase() === nome.toLowerCase())[0]
 
             if (!produto) {
                 console.log(`Não existe produto com esse nome!`);
