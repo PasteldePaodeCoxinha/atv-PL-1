@@ -17,34 +17,34 @@ let execucao = true
 
 let empresa = new Empresa()
 empresa.getClientes.push(new Cliente("a", "a", new CPF("123", new Date(2012, 12, 12)),
-[new RG("1", new Date(2001, 1, 1)), new RG("2", new Date(2002, 2, 2))], [new Telefone("55", "456"), new Telefone("55", "654")]))
+    [new RG("1", new Date(2001, 1, 1)), new RG("2", new Date(2002, 2, 2))], [new Telefone("55", "456"), new Telefone("55", "654")]))
 // ---
 empresa.getClientes.push(new Cliente("b", "b", new CPF("321", new Date(2006, 6, 6)),
-[new RG("3", new Date(2003, 3, 3)), new RG("4", new Date(2004, 4, 4))], [new Telefone("66", "789"), new Telefone("66", "987")]))
+    [new RG("3", new Date(2003, 3, 3)), new RG("4", new Date(2004, 4, 4))], [new Telefone("66", "789"), new Telefone("66", "987")]))
 // ---
 empresa.getClientes.push(new Cliente("c", "c", new CPF("132", new Date(2006, 1, 1)),
-[new RG("5", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("5", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("d", "d", new CPF("213", new Date(2007, 2, 2)),
-[new RG("6", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("6", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("e", "e", new CPF("312", new Date(2007, 4, 4)),
-[new RG("7", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("7", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("f", "f", new CPF("312", new Date(2007, 4, 4)),
-[new RG("8", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("8", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("g", "g", new CPF("456", new Date(2007, 6, 6)),
-[new RG("9", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("9", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("h", "h", new CPF("654", new Date(2007, 8, 8)),
-[new RG("10", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("10", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("i", "i", new CPF("465", new Date(2007, 10, 10)),
-[new RG("11", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("11", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 // ---
 empresa.getClientes.push(new Cliente("j", "j", new CPF("546", new Date(2007, 12, 12)),
-[new RG("12", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
+    [new RG("12", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 
 
 empresa.getClientes[0].getPets.push(new Pet("me", "Cachorro", "Caramelo", "M", "Grande"))
@@ -75,11 +75,34 @@ empresa.getClientes[8].getPets.push(new Pet("Rosinha", "vaca", "Marrom", "F", "p
 empresa.getClientes[8].getPets.push(new Pet("Gara", "cavalo", "Branco e marrom", "M", "média"))
 
 
-empresa.getProdutos.push(new Produto("Shampoo", 69.97))
 empresa.getProdutos.push(new Produto("Pente", 1000.54))
+empresa.getProdutos.push(new Produto("Shampoo", 69.97))
+empresa.getProdutos.push(new Produto("Condicionador", 14.50))
+empresa.getProdutos.push(new Produto("Tesoura", 2.00))
 
-empresa.getServicos.push(new Servico("Tosa", 40.00))
+empresa.getServicos.push(new Servico("Tosa Total", 40.00))
 empresa.getServicos.push(new Servico("Banho", 45.45))
+empresa.getServicos.push(new Servico("Tosa Pouco", 6.90))
+empresa.getServicos.push(new Servico("Cortar unhas", 69.00))
+
+for (let i = 0; i < empresa.getClientes.length; i++) {
+    for (let j = 0; j < Math.floor(Math.random() * 4); j++) {
+        let indexProduto = Math.floor(Math.random() * 4)
+        empresa.getClientes[i].getProdutosConsumidos.push(empresa.getProdutos[indexProduto])
+        empresa.getClientes[i].setValorGasto = (
+            Math.floor(
+                ((Math.floor(empresa.getClientes[i].getValorGasto * 100) * 0.01) + (Math.floor(empresa.getProdutos[indexProduto].preco * 100) * 0.01)) * 100
+            ) * 0.01)
+    }
+    for (let k = 0; k < Math.floor(Math.random() * 4); k++) {
+        let indexServico = Math.floor(Math.random() * 4)
+        empresa.getClientes[i].getServicosConsumidos.push(empresa.getServicos[indexServico])
+        empresa.getClientes[i].setValorGasto = (
+            Math.floor(
+                ((Math.floor(empresa.getClientes[i].getValorGasto * 100) * 0.01) + (Math.floor(empresa.getServicos[indexServico].preco * 100) * 0.01)) * 100
+            ) * 0.01)
+    }
+}
 
 while (execucao) {
     console.clear()

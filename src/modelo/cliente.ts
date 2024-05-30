@@ -63,6 +63,6 @@ export default class Cliente {
         return this.valorGasto
     }
     public set setValorGasto(ValorGasto: number) {
-        this.valorGasto = ValorGasto
+        this.valorGasto = Math.floor(ValorGasto * 100) * 0.01
     }
 }

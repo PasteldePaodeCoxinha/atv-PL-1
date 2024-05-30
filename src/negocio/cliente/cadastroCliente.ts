@@ -51,6 +51,10 @@ export default class CadastroCliente extends Cadastro {
             console.log(`Você precisa cadastrar pelo menos um RG!`);
             qtdRg = this.entrada.receberNumero(`Digite quantos RG's deseja cadastrar: `)
         }
+        while (qtdRg > 27) {
+            console.log(`Você não pode cadastrar essa quantidade de RG'S!`);
+            qtdRg = this.entrada.receberNumero(`Digite quantos RG's deseja cadastrar: `)
+        }
 
         for (let i = 0; i < qtdRg; i++) {
             console.log(`${i + 1}º RG`);
@@ -66,7 +70,7 @@ export default class CadastroCliente extends Cadastro {
             while (rgs.filter(r => r.getValor === valorRg).length > 0) {
                 valorRg = this.entrada.receberTexto(`Digite outro RG: `)
             }
-            while (this.clientes.filter(c => c.getRgs.filter(r => r.getValor === valorRg)).length > 0) {
+            while (this.clientes.filter(c => c.getRgs.filter(r => r.getValor === valorRg).length > 0).length > 0) {
                 valorRg = this.entrada.receberTexto(`Digite um RG válido: `)
             }
 
@@ -80,6 +84,10 @@ export default class CadastroCliente extends Cadastro {
         let qtdTel = this.entrada.receberNumero(`Digite quantos telefones deseja cadastrar: `)
         while (qtdTel < 1) {
             console.log(`Você precisa cadastrar pelo menos um telefone!`);
+            qtdTel = this.entrada.receberNumero(`Digite quantos telefones deseja cadastrar: `)
+        }
+        while (qtdTel > 5) {
+            console.log(`Você não poder ter mais de 5 telefones!`);
             qtdTel = this.entrada.receberNumero(`Digite quantos telefones deseja cadastrar: `)
         }
 
@@ -107,10 +115,6 @@ export default class CadastroCliente extends Cadastro {
             while (telefones.filter(t => t.getNumero === numeroTel).length > 0) {
                 numeroTel = this.entrada.receberTexto(`Digite outro número de telefone: `)
             }
-            while (this.clientes.filter(c => c.getTelefones.filter(t => t.getNumero === numeroTel)).length > 0) {
-                numeroTel = this.entrada.receberTexto(`Digite um RG válido: `)
-            }
-
             telefones.push(new Telefone(dddTel, numeroTel))
         }
 
