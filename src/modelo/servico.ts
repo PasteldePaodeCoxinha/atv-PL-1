@@ -9,7 +9,7 @@ export default class Servico {
         this.racasCompraram = []
     }
 
-    public get getRacasCompraram(): Array<object> {
+    public get getRacasCompraram(): Array<Array<string>> {
         return this.racasCompraram
     }
 }

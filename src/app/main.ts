@@ -42,9 +42,6 @@ empresa.getClientes.push(new Cliente("h", "h", new CPF("654", new Date(2007, 8, 
 // ---
 empresa.getClientes.push(new Cliente("i", "i", new CPF("465", new Date(2007, 10, 10)),
     [new RG("11", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
-// ---
-empresa.getClientes.push(new Cliente("j", "j", new CPF("546", new Date(2007, 12, 12)),
-    [new RG("12", new Date(2009, 9, 9))], [new Telefone("77", "123")]))
 
 
 empresa.getClientes[0].getPets.push(new Pet("me", "Cachorro", "Caramelo", "M", "Grande"))
@@ -86,13 +83,20 @@ empresa.getServicos.push(new Servico("Tosa Pouco", 6.90))
 empresa.getServicos.push(new Servico("Cortar unhas", 69.00))
 
 for (let i = 0; i < empresa.getClientes.length; i++) {
-    for (let j = 0; j < Math.floor(Math.random() * 4); j++) {
+    for (let j = 0; j < Math.floor(Math.random() * 5); j++) {
         let indexProduto = Math.floor(Math.random() * 4)
         empresa.getClientes[i].getProdutosConsumidos.push(empresa.getProdutos[indexProduto])
         empresa.getClientes[i].setValorGasto = (
             Math.floor(
                 ((Math.floor(empresa.getClientes[i].getValorGasto * 100) * 0.01) + (Math.floor(empresa.getProdutos[indexProduto].preco * 100) * 0.01)) * 100
             ) * 0.01)
+
+        empresa.getProdutos[indexProduto].compraramMaisUm()
+        let indexPet = Math.floor(Math.random() * (empresa.getClientes[i].getPets.length))
+        empresa.getProdutos[indexProduto].getRacasCompraram.push(
+            [empresa.getClientes[i].getPets[indexPet].getTipo,
+            empresa.getClientes[i].getPets[indexPet].getRaca]
+        )
     }
     for (let k = 0; k < Math.floor(Math.random() * 4); k++) {
         let indexServico = Math.floor(Math.random() * 4)
@@ -101,6 +105,12 @@ for (let i = 0; i < empresa.getClientes.length; i++) {
             Math.floor(
                 ((Math.floor(empresa.getClientes[i].getValorGasto * 100) * 0.01) + (Math.floor(empresa.getServicos[indexServico].preco * 100) * 0.01)) * 100
             ) * 0.01)
+
+        let indexPet = Math.floor(Math.random() * empresa.getClientes[i].getPets.length)
+        empresa.getServicos[indexServico].getRacasCompraram.push(
+            [empresa.getClientes[i].getPets[indexPet].getTipo,
+            empresa.getClientes[i].getPets[indexPet].getRaca]
+        )
     }
 }
 
